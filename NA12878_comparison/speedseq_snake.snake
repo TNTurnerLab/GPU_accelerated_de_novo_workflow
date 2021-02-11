@@ -1,0 +1,51 @@
+
+# Tychele N. Turner, Ph.D.
+# Snakefile for running the Speedseq to realign Illumina exomes (Running on SLURM)
+# February 27, 2020
+
+import os
+
+if config == {}:
+    configfile: "config.json"
+
+REFERENCE = config["reference"]
+DATA_DIR = config["data_dir"]
+
+
+SAMPLES = []
+for file in os.listdir(DATA_DIR):
+    if file.endswith("_sorted.bam"):
+        SAMPLES.append(str(file).split('.bam')[0])
+SAMPLES=['NA12878_sorted','NA12891_sorted']
+print(SAMPLES)
+
+rule all:
+    input: expand("%s/{sample}.bam" % DATA_DIR, sample = SAMPLES), expand("{sample}.b38.cram", sample = SAMPLES)
+
+rule speedseq:
+    input: "%s/{sample}.bam"%DATA_DIR
+    output: "{sample}.b38.cram"
+    params: prefix="{sample}"
+    shell: """
+    export PATH=/speedseq/bin:$PATH
+    export PATH=/opt/conda/bin:$PATH
+    export PATH=/miniconda3/bin:$PATH
+
+    speedseq realign -t 32 -o {params.prefix}.hg38 {REFERENCE} {input}
+
+    samtools view -@ 32 -C -T {REFERENCE} -o {output} {params.prefix}.hg38.bam
+    samtools index {output}
+
+    rm {params.prefix}.hg38.bam
+    rm {params.prefix}.hg38.discordants.bam
+    rm {params.prefix}.hg38.splitters.bam
+
+    rm {params.prefix}.hg38.bam.bai
+    rm {params.prefix}.hg38.discordants.bam.bai
+    rm {params.prefix}.hg38.splitters.bam.bai
+    """
+
+rule clean:
+    shell: """
+
+    """
