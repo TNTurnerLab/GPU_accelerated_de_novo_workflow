@@ -1,0 +1,58 @@
+# Tychele N. Turner, Ph.D.
+# Snakefile for running the karyotyper on Illumina genomes (Running on SLURM)
+# December 19, 2019
+
+import os
+
+if config == {}:
+    configfile: "karyotype.json"
+
+DATA_DIR = config["data_dir"]
+INPUTFILE=config["inputfile"]
+FILE_TAIL=config["file_tail"]
+SAMPLES = []
+with open(INPUTFILE) as f:
+    SAMPLES = f.read().splitlines()
+print(SAMPLES)
+
+rule all:
+    input: expand("%s/{sample}" % DATA_DIR, sample = SAMPLES), expand("{sample}_chr1_read_counts.txt", sample=SAMPLES), expand("{sample}_chr2_read_counts.txt", sample=SAMPLES), expand("{sample}_chr3_read_counts.txt", sample=SAMPLES), expand("{sample}_chr4_read_counts.txt", sample=SAMPLES), expand("{sample}_chr5_read_counts.txt", sample=SAMPLES), expand("{sample}_chr6_read_counts.txt", sample=SAMPLES), expand("{sample}_chr7_read_counts.txt", sample=SAMPLES), expand("{sample}_chr8_read_counts.txt", sample=SAMPLES), expand("{sample}_chr9_read_counts.txt", sample=SAMPLES), expand("{sample}_chr10_read_counts.txt", sample=SAMPLES), expand("{sample}_chr11_read_counts.txt", sample=SAMPLES), expand("{sample}_chr12_read_counts.txt", sample=SAMPLES), expand("{sample}_chr13_read_counts.txt", sample=SAMPLES), expand("{sample}_chr14_read_counts.txt", sample=SAMPLES), expand("{sample}_chr15_read_counts.txt", sample=SAMPLES), expand("{sample}_chr16_read_counts.txt", sample=SAMPLES), expand("{sample}_chr17_read_counts.txt", sample=SAMPLES), expand("{sample}_chr18_read_counts.txt", sample=SAMPLES), expand("{sample}_chr19_read_counts.txt", sample=SAMPLES), expand("{sample}_chr20_read_counts.txt", sample=SAMPLES), expand("{sample}_chr21_read_counts.txt", sample=SAMPLES), expand("{sample}_chr22_read_counts.txt", sample=SAMPLES), expand("{sample}_chrX_read_counts.txt", sample=SAMPLES), expand("{sample}_chrY_read_counts.txt", sample=SAMPLES)
+
+rule karyotype:
+    input: "%s/{sample}"%DATA_DIR
+    output: "{sample}_chr1_read_counts.txt", "{sample}_chr2_read_counts.txt", "{sample}_chr3_read_counts.txt", "{sample}_chr4_read_counts.txt", "{sample}_chr5_read_counts.txt", "{sample}_chr6_read_counts.txt", "{sample}_chr7_read_counts.txt", "{sample}_chr8_read_counts.txt", "{sample}_chr9_read_counts.txt", "{sample}_chr10_read_counts.txt", "{sample}_chr11_read_counts.txt", "{sample}_chr12_read_counts.txt", "{sample}_chr13_read_counts.txt", "{sample}_chr14_read_counts.txt", "{sample}_chr15_read_counts.txt", "{sample}_chr16_read_counts.txt", "{sample}_chr17_read_counts.txt", "{sample}_chr18_read_counts.txt", "{sample}_chr19_read_counts.txt", "{sample}_chr20_read_counts.txt", "{sample}_chr21_read_counts.txt", "{sample}_chr22_read_counts.txt", "{sample}_chrX_read_counts.txt", "{sample}_chrY_read_counts.txt"
+    log: "{sample}.counter.log"
+    shell: """
+
+
+    /opt/conda/bin/samtools view -h {input} 1 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[0]}
+    /opt/conda/bin/samtools view -h {input} 2 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[1]}
+    /opt/conda/bin/samtools view -h {input} 3 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[2]}
+    /opt/conda/bin/samtools view -h {input} 4 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[3]}
+    /opt/conda/bin/samtools view -h {input} 5 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[4]}
+    /opt/conda/bin/samtools view -h {input} 6 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[5]}
+    /opt/conda/bin/samtools view -h {input} 7 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[6]}
+    /opt/conda/bin/samtools view -h {input} 8 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[7]}
+    /opt/conda/bin/samtools view -h {input} 9 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[8]}
+    /opt/conda/bin/samtools view -h {input} 10 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[9]}
+    /opt/conda/bin/samtools view -h {input} 11 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[10]}
+    /opt/conda/bin/samtools view -h {input} 12 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[11]}
+    /opt/conda/bin/samtools view -h {input} 13 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[12]}
+    /opt/conda/bin/samtools view -h {input} 14 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[13]}
+    /opt/conda/bin/samtools view -h {input} 15 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[14]}
+    /opt/conda/bin/samtools view -h {input} 16 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[15]}
+    /opt/conda/bin/samtools view -h {input} 17 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[16]}
+    /opt/conda/bin/samtools view -h {input} 18 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[17]}
+    /opt/conda/bin/samtools view -h {input} 19 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[18]}
+    /opt/conda/bin/samtools view -h {input} 20 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[19]}
+    /opt/conda/bin/samtools view -h {input} 21 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[20]}
+    /opt/conda/bin/samtools view -h {input} 22 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[21]}
+    /opt/conda/bin/samtools view -h {input} X | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[22]}
+    /opt/conda/bin/samtools view -h {input} Y | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[23]}
+
+    """
+
+rule clean:
+    shell: """
+
+    """
