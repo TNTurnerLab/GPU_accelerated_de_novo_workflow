@@ -13,3 +13,7 @@ This folder holds variuos scripts that were used to run the comparison of the va
 ## Karyotyper
 
 This folder holds a Snakemake workflow that creates a karyotype for a sample.
+
+## Mutation Profile Analysis
+
+While not shown in this Github repo, this analysis was run using deconstructSigs from Parabricks.  The version in the Parabricks software program is very similar to the original found [here.](https://github.com/raerose01/deconstructSigs)
