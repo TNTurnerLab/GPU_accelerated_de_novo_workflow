@@ -23,7 +23,7 @@ At this point, you can run the *de novo* workflow.
 ## Realignment and downsampling
 
 ### speedseq_snake.snake 
-Is a Snakemake workflow that realigns the downloaded NA12878 samples to our reference file using Speedseq v0.1.2 pulled from their [github](https://github.com/hall-lab/speedseq).  The Dockerfile that was used to run this command can be found in the docker/speedseq folder of this current repo.
+Is a Snakemake workflow that realigns the downloaded NA12878 samples to our reference file using Speedseq v0.1.2 pulled from their [github](https://github.com/hall-lab/speedseq).  
 Assosicated with this snake are these two files, config.json and cluster_config.json.  The config.json options are:
 
 reference:  Path to reference file
@@ -37,6 +37,7 @@ These two bash scripts were used to conduct the downsampling.  The same root, 42
 
 submit_downsample holds the bsub command for our server to send the jobs out, using the docker image below.  samtools_downsamples.sh has the SAMtools downsample command.
 
+The docker image used for this file can be found at tnturnerlab/gpu_accelerated_denovo_workflow:glnexus_filter
 
 ## Tree creation
 The input for the following python scripts was created using GATK 3.5 Combine Variants to combine the variants from the output of the *de novo* workflow.
