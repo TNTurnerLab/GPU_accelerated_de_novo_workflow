@@ -24,7 +24,15 @@ data_dir:  Path to location of data to be realigned
 
 The docker image used for this file can be found at tnturnerlab/gpu_accelerated_denovo_workflow:speedseq
 
+### samtools_downsample.sh and submit_downsample.sh
+
+These two bash scripts were used to conduct the downsampling.  The same root, 42, was used for all samples.  The amount downsampled changed to get the sample to around 30x coverage.
+
+submit_downsample holds the bsub command for our server to send the jobs out, using the docker image below.  samtools_downsamples.sh has the SAMtools downsample command.
+
+
 ### Tree creation
+The input for the following python scripts was created using GATK 3.5 Combine Variants to combine the variants from the output of the de novo workflow.
 
 To create the tree, the python scripts in this order were used:
 
