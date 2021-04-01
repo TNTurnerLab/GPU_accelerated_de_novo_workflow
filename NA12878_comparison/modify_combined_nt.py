@@ -1,7 +1,10 @@
+#Jeffrey Ng
+#Turner Lab, Washington University in St. Louis
+
 holdme={}
 reference=[]
 
-holdme={}
+
 with open('combined_NA12878_genotype_downsample_pacbio_test_nt.vcf','w') as out:
     with open('combined_NA12878_genotype__downsample_pacbio_test.vcf') as input:
         for line in input:
@@ -18,7 +21,7 @@ with open('combined_NA12878_genotype_downsample_pacbio_test_nt.vcf','w') as out:
                     reference.append(gt)
                 i=9
                 while i < (len(data)-2):
-                #     #print(data[i])
+
                     sample=data[i].split(':')[0].split('/')
                     holder=data[i].split(':')[0]
                     if holder=='0/0' and len(ref)==1:
@@ -33,25 +36,12 @@ with open('combined_NA12878_genotype_downsample_pacbio_test_nt.vcf','w') as out:
                         data[i]=ref[0]+alt
                     else:
                         print(line)
-                    #     counter=0
-                    #     if sample[0]=='.':
-                    #         sample[0]=str(0)
-                    #         counter=1
-                    #     if sample[1]=='.':
-                    #         sample[1]=str(0)
-                    #         counter=1
-                    #     if counter==1:
-                    #         data[i]=sample[0]+'/'+sample[1]
-                    #     else:
-                    #
-                    #
-                    #
+
                     i+=1
-                    #out.write(line)
+
                 hello=''
                 for thing in data:
                     hello+=thing+'\t'
 
                 hello+=gt
                 out.write(hello+'\n')
-                #exit()
