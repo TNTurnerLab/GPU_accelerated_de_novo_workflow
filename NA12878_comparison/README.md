@@ -24,10 +24,14 @@ At this point, you can run the *de novo* workflow.
 
 ### speedseq_snake.snake 
 Is a Snakemake workflow that realigns the downloaded NA12878 samples to our reference file using Speedseq v0.1.2 pulled from their [github](https://github.com/hall-lab/speedseq).  
-Assosicated with this snake are these two files, config.json and cluster_config.json.  The config.json options are:
+Assosicated with this snake are these two files, config.json and cluster_config.json.  
 
-reference:  Path to reference file
-data_dir:  Path to location of data to be realigned
+The config.json options are:
+
+* reference:  Path to reference file
+* data_dir:  Path to location of data to be realigned
+
+cluster_config.json holds server node requirements
 
 The docker image used for this file can be found at tnturnerlab/gpu_accelerated_denovo_workflow:speedseq
 
