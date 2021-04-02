@@ -4,7 +4,7 @@ Jeffrey Ng
 
 ## *de novo* worflow
 
-The de novo workflow main input is the vcf output from GLnexus for both GATK Haplotypecaller and DeepVariant.  Things needed are two text files that have the family information, one that is text delimited and one that is comma delimited.  The order of the samples should be this:  Father, Mother, Child.
+The de novo workflow main input is the vcf output from GLnexus for both GATK Haplotypecaller and DeepVariant.  Things needed are two text files that have the family information, one that is text delimited and one that is comma delimited.  The order of the samples should be this:  Father, Mother, Child.  RepeatMaster files for hg38 centromemes, LCR regions, and recently discovered repeat regions were used to filter by position, CpG sites locations were also used to determine percent % CpG for our *de novo* variants.
 
 
 ### Config.json options:
