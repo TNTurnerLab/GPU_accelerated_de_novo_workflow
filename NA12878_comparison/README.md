@@ -46,6 +46,12 @@ The docker image used for this file can be found at tnturnerlab/gpu_accelerated_
 ## Tree creation
 The input for the following python scripts was created using GATK 3.5 Combine Variants to combine the variants from the output of the *de novo* workflow.
 
+'''
+java -Xmx15G -jar /GenomeAnalysisTK.jar -T CombineVariants -R /storage1/fs1/tychele/Active/testing/reference/GRCh38_full_analysis_set_plus_decoy_hla.fa -V:NA12878_2020 /storage1/fs1/tychele/Active/testing/ris_testing/parabricks/glnexus_trios_only_redo/workflow/out/NA12878/NA12878.glnexus.family.combined_intersection_filtered_gq_20_depth_10_position.vcf -V:NA12878_2012 Old_NA12878.glnexus.family.combined_intersection_filtered_gq_20_depth_10_position.vcf.gz -V:SRR952827 SRR952827_1_downsample.glnexus.family.combined_intersection_filtered_gq_20_depth_10_position.vcf.gz -V:MGI_2018_H_IJ-NA12878 H_IJ-NA12878.glnexus.family.combined_intersection_filtered_gq_20_depth_10_position.vcf.gz -V:gerald_HFKWMDSXX_combo gerald_HFKWMDSXX_combo_downsample.glnexus.family.combined_intersection_filtered_gq_20_depth_10_position.vcf.gz -genotypeMergeOptions PRIORITIZE -priority NA12878_2020,gerald_HFKWMDSXX_combo,MGI_2018_H_IJ-NA12878,SRR952827,NA12878_2012
+
+'''
+This command was run within the tnturnerlab/gpu_accelerated_denovo_workflow:glnexus_filter docker image
+
 To create the tree, the python scripts in this order were used:
 
 modify_combined_for_tree.py -> modify_combined_nt.py -> modify_IUPAC.py -> make_fasta.py
