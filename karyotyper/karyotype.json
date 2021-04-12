@@ -1,4 +1,4 @@
 {
-  "data_dir": "/storage1/fs1/tychele/Active/testing/ris_testing/karyotyper_POC/",
+  "data_dir": "/path/to/crams/",
   "inputfile": "samples.txt"
 }

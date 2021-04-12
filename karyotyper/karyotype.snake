@@ -1,6 +1,6 @@
 # Tychele N. Turner, Ph.D.
-# Snakefile for running the karyotyper on Illumina genomes (Running on SLURM)
-# December 19, 2019
+# Snakefile for running digital karyotyping on Illumina genomes 
+# Last update: April 12, 2021
 
 import os
 
