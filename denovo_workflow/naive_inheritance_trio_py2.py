@@ -1,7 +1,7 @@
 #!/bin/python
 #Naive inheritance in trios
-#Tychele N. Turner, Ph.D.
-#December 19, 2018
+#Authors: Tychele N. Turner, Ph.D. and Jeffrey Ng
+#Last updated: April 12, 2021
 
 import sys
 import gzip
@@ -42,9 +42,6 @@ class Variant(object):
                 self.father = row[9]
                 self.mother = row[10]
                 self.proband = row[11]
-#                self.sibling = row[12]
-#                if not self.chrom.startswith("chr"):
-#                        self.chrom = 'chr' + self.chrom
                 if (self.father.split(':')[0] == '0/0' or self.father.split(':')[0] == '0|0') and (self.mother.split(':')[0] == '0/0' or self.mother.split(':')[0] == '0|0') and (self.proband.split(':')[0] == '0/1' or self.proband.split(':')[0] == '1/1' or self.proband.split(':')[0] == '1/0' or self.proband.split(':')[0] == '0|1' or self.proband.split(':')[0] == '1|1' or self.proband.split(':')[0] == '1|0'):
                         self.info = self.info + ';TRANSMITTED=no;INH=denovo_pro'
                 else:
