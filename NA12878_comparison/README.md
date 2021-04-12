@@ -9,7 +9,7 @@ Here is a collection of bash scripts that were used to run the NA12878 compariso
 These are bash scripts that call Parabricks v3.0.0 DeepVariant and GATK Haplotypecaller, respectively.  The run_pipeline.py script is a wrapper that is needed to run Parabricks on our server system, but the general commands to run Parabricks are the same outside that.  The docker image is included within the script is specific for using Parabricks on our server system.  Your own Parabricks docker image will be necessary.
 
 ### submit_glnexus_dv.sh and submit_glnexus_hc.sh 
-These are bash scripts that call GLnexus v1.2.6 to genotype the output from DeepVariant and GATK Haplotypecaller, respectively. The docker image is included within the script and is publicly available.  
+These are example bash scripts that call GLnexus v1.2.6 to genotype the output from DeepVariant and GATK Haplotypecaller, respectively. The docker image is included within the script and is publicly available by the authors of [GLnexus](https://github.com/dnanexus-rnd/GLnexus).  
 
 ### bcftovcf.sh 
 Is a script that converts the .bcf output from the GLnexus run to a vcf file.  The docker image used for this file can be found at tnturnerlab/gpu_accelerated_denovo_workflow:glnexus_filter
