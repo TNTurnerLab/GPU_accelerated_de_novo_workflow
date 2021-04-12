@@ -4,14 +4,13 @@ from argparse import ArgumentParser
 
 
 def checkParents(parent,gq_filter,depth_filter):
-    #parent=parent.split(',')
-    #print(parent)
+    
     depth=int(parent[1])
     allref=int(parent[0].split(',')[1])
     gq=int(parent[2])
 
     if depth >= depth_filter and allref ==0 and gq>gq_filter:
-    #    print(depth,allref,gq,'parent')
+  
         return(1)
     else:
         return(0)
@@ -19,15 +18,15 @@ def checkParents(parent,gq_filter,depth_filter):
 def checkKid(kid,gq_filter,depth_filter):
     depth=int(kid[1])
     ref=int(kid[0].split(',')[1])
-    #total=int(depth+ref)
+   
     gq =int(kid[2])
 
     if depth>=depth_filter and gq > gq_filter:
-        #total=int(depth)+int(ref)
+        
         checkme=float(ref)/float(depth)
-        #print(checkme)
+       
         if float(checkme) > .25:
-        #    print(depth,gq,checkme,'kid')
+       
             return(1)
         else:
             return(0)
@@ -41,8 +40,7 @@ def checkPos(checkme,first,second,third):
         return(1)
     elif checkme==third:
         return(2)
-#flie= sys.argv[1]
-#file='HG00405.glnexus_denovo_only_combined_intersection.vcf'
+
 parser = ArgumentParser(description='Grab info for filter')
 parser.add_argument('file',help='File to run')
 parser.add_argument('f',help='Father')
