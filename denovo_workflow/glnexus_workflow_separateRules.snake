@@ -56,9 +56,6 @@ rule grabFamilies_DV:
     bgzip {OUT_DIR}/{params.prefix}/{params.prefix}.glnexus_denovo_actual.dv.vcf
     tabix {OUT_DIR}/{params.prefix}/{params.prefix}.glnexus_denovo_actual.dv.vcf.gz
 
-
-
-
     ls {output}
     """
 
@@ -77,7 +74,6 @@ rule grabFamilies_HC:
     bcftools view -Oz --threads 4 -s $trio {GLNEXUS_FILE_HC}/{params.prefix}.trio.glnexus.hc.vcf.gz  > {OUT_DIR}/{params.prefix}/{params.prefix}.glnexus.hc.vcf.gz
 
     tabix {OUT_DIR}/{params.prefix}/{params.prefix}.glnexus.hc.vcf.gz
-
 
     echo "Naive search HC"
     python2 naive_inheritance_trio_py2.py  {OUT_DIR}/{params.prefix}/{params.prefix}.glnexus.hc.vcf.gz > {OUT_DIR}/{params.prefix}/{params.prefix}.glnexus_denovo.hc.vcf
