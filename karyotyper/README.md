@@ -4,3 +4,6 @@ karyotype.json config file options:
 
 * data_dir:  Full path to where the cram/bam files are
 * inputfile:  A text file of what samples that need to be run
+
+After running the snake file run the `karyotype.R` script to generate per sample karyotypes
+
