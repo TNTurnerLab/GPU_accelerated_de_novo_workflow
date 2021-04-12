@@ -1,6 +1,6 @@
 # GPU accelerated *de novo* workflow
 
-Please naviagte to the various folders to find code for the different parts of the project.
+Please navigate to the various folders to find code for the different parts of the project.
 
 ## denovo_workflow
 
