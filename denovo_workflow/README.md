@@ -4,7 +4,7 @@ Jeffrey Ng
 
 ## *de novo* worflow
 
-The de novo workflow main input is the vcf output from GLnexus for both GATK Haplotypecaller and DeepVariant.  Things needed are two text files that have the family information, one that is text delimited and one that is comma delimited.  The order of the samples should be this:  Father, Mother, Child.  RepeatMaster files for hg38 centromemes, LCR regions, and recently discovered repeat regions were used to filter by position, CpG sites locations were also used to determine percent % CpG for our *de novo* variants.
+The de novo workflow main input is the vcf output from GLnexus for both GATK Haplotypecaller and DeepVariant.  Things needed are two text files that have the family information, one that is text delimited and one that is comma delimited.  The order of the samples should be this:  Father, Mother, Child.  RepeatMaster files for hg38 centromeres, LCR regions, and recently discovered repeat regions were used to filter by position, CpG sites locations were also used to determine percent % CpG for our *de novo* variants.
 
 
 ### Config.json options:
@@ -19,7 +19,7 @@ The de novo workflow main input is the vcf output from GLnexus for both GATK Hap
 * depth_value: Depth value filter.
 * out_dir:  Output directory.  
 
-The input is a folders that hold vcfs from DeepVariant and Haplotypecaller.  Make sure that each caller is in a separate folder.  The snake will run all trios listed within the family file, so please ensure that the trios intended to be run matches the input within the folders.
+The input is a folder that hold vcfs from DeepVariant and Haplotypecaller.  Make sure that each caller is in a separate folder.  The snake will run all trios listed within the family file, so please ensure that the trios intended to be run matches the input within the folders.
 
 The output are multiple vcf files.  
 The main de novo calls are found in vcf files with the suffix:  _position.vcf
