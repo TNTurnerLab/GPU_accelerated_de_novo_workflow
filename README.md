@@ -16,7 +16,7 @@ This folder holds a Snakemake workflow that creates a karyotype for a sample.
 
 ## Unfazed
 
-This folder holds the codes for running unfazed on de novo calls to get parent-of-origin chromosome for the de novo variants.
+This folder holds the codes for running unfazed on de novo calls to get the parent-of-origin chromosome for the de novo variants.
 
 ## Mutation Profile Analysis
 
