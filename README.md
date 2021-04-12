@@ -8,7 +8,7 @@ The de novo workflow folder has the scripts required to run the *de novo* callin
 
 ## NA12878_comparison
 
-This folder holds variuos scripts that were used to run the comparison of the various NA12878 samples.  This also holds the general code for how Parabricks, GLnexus, and preprocessing steps were run before running it in the *de novo* workflow
+This folder holds various scripts that were used to run the comparison of the various NA12878 samples.  This also holds the general code for how Parabricks, GLnexus, and preprocessing steps were run before running it in the *de novo* workflow
 
 ## Karyotyper
 
