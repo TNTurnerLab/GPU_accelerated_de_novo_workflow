@@ -50,4 +50,4 @@ To create the tree, the python scripts in this order were used:
 
 modify_combined_for_tree.py -> modify_combined_nt.py -> modify_IUPAC.py -> make_fasta.py
 
-The tree itself was made within [MEGAX](https://www.megasoftware.net/)
+The tree itself was made within [MEGAX](https://www.megasoftware.net/) from the fasta file made from make_fasta.py.  We used a ClustalW alignment and Maximum Likelihood Tree options.
