@@ -21,3 +21,9 @@ This folder holds the codes for running unfazed on de novo calls to get the pare
 ## Mutation Profile Analysis
 
 While not shown in this Github repo, this analysis was run using deconstructSigs from Parabricks.  The version in the Parabricks software program is very similar to the original found [here.](https://github.com/raerose01/deconstructSigs)
+
+## Data we have analyzed for 602 trios from the 1000 Genomes Project
+
+Link can be found [here](https://app.globus.org/file-manager?origin_id=3eff453a-88f4-11eb-954f-752ba7b88ebe&origin_path=%2F)
+
+
