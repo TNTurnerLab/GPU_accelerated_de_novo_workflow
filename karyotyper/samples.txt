@@ -1,1 +1,1 @@
-HG00154.mapped.ILLUMINA.bwa.GBR.low_coverage.20101123.bam
+NA12878.final.cram
