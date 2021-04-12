@@ -26,7 +26,7 @@ The main de novo calls are found in vcf files with the suffix:  _position.vcf
 vcf file with the suffix _position_all.vcf is the region based filtered vcf file.  This marks how many de novo variants are found within CpG regions.
 
 
-###Reference Files
+### Reference Files
 
 #### Centromeres
 ```
