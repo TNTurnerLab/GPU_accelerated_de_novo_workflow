@@ -1,3 +1,5 @@
+### README to run unfazed on de novo calls to get the parent-of-origin chromosome for the de novo variants.
+
 1. Get pedigree file
 ```
 wget http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/data_collections/1000G_2504_high_coverage/20130606_g1k_3202_samples_ped_population.txt
