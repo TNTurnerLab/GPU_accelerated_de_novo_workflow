@@ -24,7 +24,6 @@ rule karyotype:
     log: "{sample}.counter.log"
     shell: """
 
-
     /opt/conda/bin/samtools view -h {input} 1 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[0]}
     /opt/conda/bin/samtools view -h {input} 2 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[1]}
     /opt/conda/bin/samtools view -h {input} 3 | /opt/conda/bin/samtools flagstat - | grep 'QC-passed' | grep -v 'Warn' | cut -f1 -d" " > {output[2]}
