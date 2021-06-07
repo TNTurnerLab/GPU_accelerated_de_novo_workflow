@@ -19,6 +19,10 @@ This folder holds a Snakemake workflow that creates a karyotype for a sample.
 
 This folder holds the codes for running unfazed on de novo calls to get the parent-of-origin chromosome for the de novo variants.
 
+## Viral Analysis
+
+This folder holds the codes for estimating EBV copy number.
+
 ## Mutation Profile Analysis
 
 While not shown in this Github repo, this analysis was run using deconstructSigs from Parabricks.  The version in the Parabricks software program is very similar to the original found [here.](https://github.com/raerose01/deconstructSigs)
