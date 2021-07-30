@@ -31,4 +31,8 @@ While not shown in this Github repo, this analysis was run using deconstructSigs
 
 Link can be found [here](https://app.globus.org/file-manager?origin_id=3eff453a-88f4-11eb-954f-752ba7b88ebe&origin_path=%2F)
 
+UCSC Genome Browser track for 1000 Genomes Project DNV calls link:
 
+```
+https://data.cyverse.org/dav-anon/iplant/home/turnerlabwashu/Turner_Lab_Track_Hubs/Ng_et_al_1000G_DNV_Paper/hub.txt
+```
