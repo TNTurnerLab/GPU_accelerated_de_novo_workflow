@@ -1,4 +1,4 @@
-# GPU accelerated *de novo* workflow
+# Hare: GPU accelerated *de novo* workflow
 
 Led by Jeffrey Ng of the Turner Lab at Washington University.
 Please navigate to the various folders to find code for the different parts of the project.
